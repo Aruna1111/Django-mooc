@@ -4,6 +4,7 @@ This web app has been developed using the popular Django framework and Bootstrap
 
 
 Basic Features of The App
+
 Register – Users can register and create a new profile
 Login - Registered users can login using username and password
 Social Apps Login – Users can login using their GitHub or Google account
