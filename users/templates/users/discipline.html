@@ -1,0 +1,16 @@
+{% extends "users/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+ <h1>Create new Discipline</h1>
+<div class="jumbotron">
+<form action="" method="post" novalidate>
+  {% csrf_token %}
+  {{ form|crispy }}
+  <button type="submit" class="btn btn-dark btn-lg">Submit</button>
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "users/base.html" %}
+{% load static %}
+
+{% block title %} Home Page {% endblock title%}
+
+{% block css %}
+    <link rel="stylesheet"  href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome, {{user.first_name.title|default:'Guest'}}</h1>
+        <p class="lead">
+            This is <b>user registration and login system</b> build with django which is
+            a Python-based free and open-source web framework that follows the model–template–views architectural pattern.
+        </p>
+        <hr class="my-4">
+
+        <div class="table-courses">
+            <h2><a class="article-title" href="{% url 'mooc-detail' %}"> </a> Courses List </h2>
+
+            <table div="courses-list">
+
+                <thead>
+                <tr>
+                    <th class="department">Департамент</th>
+                    <th class="discipline">Дисциплина</th>
+                    <th class="mooc-name">Название МООК</th>
+                    <th class="platform">Платформа</th>
+                    <th class="price">Цена</th>
+                    <th class="available">Доступность</th>
+                    <th class="weeks">Недели</th>
+                    <th class="hours">Часы</th>
+                    <th class="link">Ссылка</th>
+                </tr>
+                </thead>
+
+                {% for course in mooc_info %}
+                <tbody>
+                <tr>
+                    <td class="department">
+                            <p> {{course.get_discipline.get_department}} </p>
+                        </td>
+
+                    <td class="discipline">
+                            <p> {{ course.get_discipline.name }} </p>
+                        </td>
+
+                    <td class="mooc-name">
+                            <p> {{ course.name }} </p>
+                        </td>
+
+                    <td class="platform">
+                            <p> {{ course.platform }} </p>
+                        </td>
+
+                    <td class="price">
+                            <p> {{ course.price }} </p>
+                        </td>
+
+                    <td class="available">
+                            <p> {{ course.available }} </p>
+                        </td>
+
+                    <td class="weeks">
+                            <p> {{ course.weeks }} </p>
+                        </td>
+
+                    <td class="hours">
+                            <p> {{ course.hours }} </p>
+                        </td>
+
+                    <td class="link">
+                            <a href="{{ course.link }}"> {{ course.link }} </a>
+                        </td>
+                </tr>
+                </tbody>
+
+                {% empty %}
+                    <li>No courses yet.</li>
+                {% endfor %}
+            </table>
+
+
+
+            <div class="auth">
+                {% if user.is_authenticated %}
+                    <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button">Logout</a>
+                {% else %}
+                    <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Sign in</a>
+                {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock content %}

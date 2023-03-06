@@ -1,0 +1,8 @@
+<h1>Articles</h1>
+<ul>
+{% for course in object_list %}
+    <li>{{course.get_discipline.get_department}} - {{ course.get_discipline.name }} - {{ course.name }} - {{ course.platform }} - {{ course.price }} - {{ course.available }} - {{ course.link }} - {{ course.weeks }} - {{ course.hours }}</li>
+{% empty %}
+    <li>No courses yet.</li>
+{% endfor %}
+</ul>
