@@ -1,0 +1,104 @@
+{% extends "users/base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet"  href="{% static 'css/main.css' %}">
+{% endblock css%}
+
+
+<html lang="en">
+<head>
+{% block head%}
+    {% endblock head%}
+</head>
+
+<body>
+{% block content %}
+    
+                <main class="ant-layout-content" style="margin: 0px;">
+                    <div class="site-layout-background" style="padding: 24px; width: 100%;">
+                        <h1 class="ant-typography"><a class="article-title" href="{% url 'mooc-detail' %}"> </a>Courses List</h1>
+                        <div class="ant-space ant-space-vertical" style="width: 100%; gap: 16px;">
+                            <div class="ant-space-item">
+                                <div class="ant-table-wrapper">
+                                    <div class="ant-spin-nested-loading">
+                                        <div class="ant-spin-container">
+                                            <div class="ant-table ant-table-bordered ant-table-ping-right ant-table-scroll-horizontal">
+                                                <div class="ant-table-container">
+                                                    <div class="ant-table-content" style="overflow: auto hidden;">
+                                                        <table style="width: 1200px; min-width: 100%; table-layout: auto;">
+                                                            <colgroup><col style="width: 5%;"></colgroup>
+                                                            <thead class="ant-table-thead">
+                                                                <tr>
+                                                                    <th rowspan="2" class="ant-table-cell department">Департамент</th>
+                                                                    <th rowspan="2" class="ant-table-cell discipline">Дисциплина</th>
+                                                                    <th rowspan="2" class="ant-table-cell mooc-name">Название МООК</th>
+                                                                    <th rowspan="2" class="ant-table-cell platform">Платформа</th>
+                                                                    <th rowspan="2" class="ant-table-cell price">Цена</th>
+                                                                    <th rowspan="2" class="ant-table-cell available">Доступность</th>
+                                                                    <th rowspan="2" class="ant-table-cell week">Недели</th>
+                                                                    <th rowspan="2" class="ant-table-cell hours">Часы</th>
+                                                                    <th rowspan="2" class="ant-table-cell link">Ссылка</th>
+                                                                </tr>
+                                                            </thead>
+                
+                                                            {% for course in mooc_info %}
+                                                            <tbody class="ant-table-tbody">
+                                                                <tr>
+                                                                    <td class="department">
+                                                                        <p> {{course.get_discipline.get_department}} </p>
+                                                                    </td>
+                                        
+                                                                    <td class="discipline">
+                                                                        <p> {{ course.get_discipline.name }} </p>
+                                                                    </td>
+                                        
+                                                                    <td class="mooc-name">
+                                                                        <p> {{ course.name }} </p>
+                                                                    </td>
+                                        
+                                                                    <td class="platform">
+                                                                        <p> {{ course.platform }} </p>
+                                                                    </td>
+                                        
+                                                                    <td class="price">
+                                                                        <p> {{ course.price }} </p>
+                                                                    </td>
+                                        
+                                                                    <td class="available">
+                                                                        <p> {{ course.available }} </p>
+                                                                    </td>
+                                        
+                                                                    <td class="weeks">
+                                                                        <p> {{ course.weeks }} </p>
+                                                                    </td>
+                                        
+                                                                    <td class="hours">
+                                                                        <p> {{ course.hours }} </p>
+                                                                    </td>
+                                        
+                                                                    <td class="link">
+                                                                        <a href="{{ course.link }}"> {{ course.link }} </a>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+
+                                                            {% empty %}
+                                                                <li>No courses yet.</li>
+                                                            {% endfor %}
+
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            
+{% endblock content %}
+</body>
+</html>
