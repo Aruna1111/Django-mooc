@@ -1,0 +1,764 @@
+/*!
+ * Bootstrap v4.0.0 (https://getbootstrap.com)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.ant-menu:after, .ant-menu:before {
+    content: "";
+    display: table;
+}
+.ant-menu:after {
+    clear: both;
+}
+::selection {
+    background: #1890ff;
+    color: #fff;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-family: sans-serif;
+    line-height: 1.15;
+}
+html {
+    --antd-wave-shadow-color: #1890ff;
+    --scroll-bar: 0;
+}
+body {
+    font-feature-settings: "tnum","tnum";
+    background-color: #fff;
+    color: rgba(0,0,0,.85);
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    margin: 0;
+}
+body, html {
+    height: 100%;
+    width: 100%;
+}
+.ant-layout.ant-layout-has-sider {
+    flex-direction: row;
+}
+.ant-layout, .ant-layout * {
+    box-sizing: border-box;
+}
+
+.ant-layout {
+    background: #f0f2f5;
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    min-height: 0;
+}
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section, div {
+    display: block;
+}
+.ant-layout-sider {
+    background: #001529;
+    min-width: 0;
+    position: relative;
+    transition: all .2s;
+}
+.ant-layout-sider-children {
+    height: 100%;
+    margin-top: -0.1px;
+    padding-top: 0.1px;
+}
+.ant-menu-dark.ant-menu-inline, .ant-menu-dark.ant-menu-vertical, .ant-menu-dark.ant-menu-vertical-left, .ant-menu-dark.ant-menu-vertical-right {
+    border-right: 0;
+}
+.ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark, .ant-menu.ant-menu-dark .ant-menu-sub {
+    background: #001529;
+    color: #fff;
+    color: hsla(0,0%,100%,.65);
+}
+.ant-menu-root.ant-menu-inline, .ant-menu-root.ant-menu-vertical, .ant-menu-root.ant-menu-vertical-left, .ant-menu-root.ant-menu-vertical-right {
+    box-shadow: none;
+}
+.ant-menu-inline {
+    width: 100%;
+}
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+    border-right: 1px solid #f0f0f0;
+}
+.ant-menu {
+    -webkit-font-feature-settings: "tnum";
+    font-feature-settings: "tnum";
+    background: #fff;
+    box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%), 0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+    box-sizing: border-box;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    line-height: 0;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-align: left;
+    transition: background .3s,width .3s cubic-bezier(.2,0,0,1) 0s;
+}
+.ant-menu-item, .ant-menu-submenu-title {
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    padding: 0 20px;
+    position: relative;
+    transition: border-color .3s,background .3s,padding .3s cubic-bezier(.645,.045,.355,1);
+    white-space: nowrap;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.ant-menu-dark.ant-menu-inline .ant-menu-item, .ant-menu-dark.ant-menu-inline .ant-menu-submenu-title {
+    width: 100%;
+}
+.ant-menu-dark.ant-menu-inline .ant-menu-item, .ant-menu-dark.ant-menu-vertical .ant-menu-item, .ant-menu-dark.ant-menu-vertical-left .ant-menu-item, .ant-menu-dark.ant-menu-vertical-right .ant-menu-item {
+    border-right: 0;
+    left: 0;
+    margin-left: 0;
+}
+.ant-menu-inline.ant-menu-root .ant-menu-item, .ant-menu-inline.ant-menu-root .ant-menu-submenu-title {
+    align-items: center;
+    display: flex;
+    transition: border-color .3s,background .3s,padding .1s cubic-bezier(.215,.61,.355,1);
+}
+.ant-menu-inline .ant-menu-item:not(:last-child), .ant-menu-vertical .ant-menu-item:not(:last-child), .ant-menu-vertical-left .ant-menu-item:not(:last-child), .ant-menu-vertical-right .ant-menu-item:not(:last-child) {
+    margin-bottom: 8px;
+}
+.ant-menu-dark .ant-menu-item, .ant-menu-dark .ant-menu-item-group-title, .ant-menu-dark .ant-menu-item>a, .ant-menu-dark .ant-menu-item>span>a {
+    color: #fff;
+}
+.ant-menu-dark .ant-menu-item, .ant-menu-dark .ant-menu-item-group-title, .ant-menu-dark .ant-menu-item>a, .ant-menu-dark .ant-menu-item>span>a {
+    color: hsla(0,0%,100%,.65);
+}
+.ant-menu-inline .ant-menu-item, .ant-menu-inline .ant-menu-submenu-title {
+    width: calc(100% + 1px);
+}
+.ant-menu-inline>.ant-menu-item, .ant-menu-inline>.ant-menu-submenu>.ant-menu-submenu-title, .ant-menu-vertical-left>.ant-menu-item, .ant-menu-vertical-left>.ant-menu-submenu>.ant-menu-submenu-title, .ant-menu-vertical-right>.ant-menu-item, .ant-menu-vertical-right>.ant-menu-submenu>.ant-menu-submenu-title, .ant-menu-vertical>.ant-menu-item, .ant-menu-vertical>.ant-menu-submenu>.ant-menu-submenu-title {
+    height: 40px;
+    line-height: 40px;
+}
+.ant-menu-inline .ant-menu-item, .ant-menu-inline .ant-menu-submenu-title, .ant-menu-vertical .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-item, .ant-menu-vertical-right .ant-menu-submenu-title {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    overflow: hidden;
+    padding: 0 16px;
+    text-overflow: ellipsis;
+}
+.ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item {
+    position: relative;
+}
+.ant-menu-inline.ant-menu-root .ant-menu-item>*, .ant-menu-inline.ant-menu-root .ant-menu-submenu-title>* {
+    flex: none;
+}
+.ant-menu-item .ant-menu-item-icon, .ant-menu-item .anticon, .ant-menu-submenu-title .ant-menu-item-icon, .ant-menu-submenu-title .anticon {
+    font-size: 14px;
+    min-width: 14px;
+    transition: font-size .15s cubic-bezier(.215,.61,.355,1),margin .3s cubic-bezier(.645,.045,.355,1),color .3s;
+}
+.anticon {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: inherit;
+    display: inline-block;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    vertical-align: -0.125em;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+.anticon svg {
+    display: inline-block;
+}
+.anticon>* {
+    line-height: 1;
+}
+svg[Attributes Style] {
+    width: 1em;
+    height: 1em;
+    fill: currentcolor;
+}
+.ant-menu-inline.ant-menu-root .ant-menu-item>.ant-menu-title-content, .ant-menu-inline.ant-menu-root .ant-menu-submenu-title>.ant-menu-title-content {
+    flex: auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ant-menu-inline.ant-menu-root .ant-menu-item>*, .ant-menu-inline.ant-menu-root .ant-menu-submenu-title>* {
+    flex: none;
+}
+.ant-menu-item .ant-menu-item-icon+span, .ant-menu-item .anticon+span, .ant-menu-submenu-title .ant-menu-item-icon+span, .ant-menu-submenu-title .anticon+span {
+    margin-left: 10px;
+    opacity: 1;
+    transition: opacity .3s cubic-bezier(.645,.045,.355,1),margin .3s,color .3s;
+}
+.ant-menu-title-content {
+    transition: color .3s;
+}
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #1890ff;
+}
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected, .ant-menu.ant-menu-dark .ant-menu-item-selected {
+    background-color: #1890ff;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #e6f7ff;
+}
+.ant-menu-dark .ant-menu-item-selected {
+    border-right: 0;
+    color: #fff;
+}
+.ant-menu-item-selected, .ant-menu-item-selected a, .ant-menu-item-selected a:hover {
+    color: #1890ff;
+}
+.ant-switch {
+    -webkit-font-feature-settings: "tnum";
+    font-feature-settings: "tnum";
+    background-color: rgba(0,0,0,.25);
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: rgba(0,0,0,.85);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    height: 22px;
+    line-height: 1.5715;
+    line-height: 22px;
+    list-style: none;
+    margin: 0;
+    min-width: 44px;
+    padding: 0;
+    position: relative;
+    transition: all .2s;
+    -webkit-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+}
+.ant-switch {
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+[type=reset], [type=submit], button, html [type=button] {
+    -webkit-appearance: button;
+}
+button, select {
+    text-transform: none;
+}
+button, input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
+[role=button], a, area, button, input:not([type=range]), label, select, summary, textarea {
+    touch-action: manipulation;
+}
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+.ant-switch-handle {
+    height: 18px;
+    left: 2px;
+    top: 2px;
+    width: 18px;
+}
+.ant-switch-handle, .ant-switch-handle:before {
+    position: absolute;
+    transition: all .2s ease-in-out;
+}
+.ant-switch-inner {
+    color: #fff;
+    display: block;
+    font-size: 12px;
+    margin: 0 7px 0 25px;
+    transition: margin .2s;
+}
+.ant-layout.ant-layout-has-sider>.ant-layout, .ant-layout.ant-layout-has-sider>.ant-layout-content {
+    width: 0;
+}
+.ant-layout-header {
+    background: #001529;
+    color: rgba(0,0,0,.85);
+    height: 64px;
+    line-height: 64px;
+    padding: 0 50px;
+}
+.ant-layout-footer, .ant-layout-header {
+    flex: 0 0 auto;
+}
+.ant-layout-header {
+    background: #001529;
+}
+.ant-row, .ant-row:after, .ant-row:before {
+    display: flex;
+}
+.ant-row {
+    flex-flow: row wrap;
+    min-width: 0;
+}
+.ant-layout, .ant-layout * {
+    box-sizing: border-box;
+}
+.ant-col {
+    max-width: 100%;
+    min-height: 1px;
+    position: relative;
+}
+.ant-space-align-center {
+    align-items: center;
+}
+.ant-space {
+    display: inline-flex;
+}
+html [type=button] {
+    -webkit-appearance: button;
+}
+.ant-btn-icon-only {
+    border-radius: 2px;
+    font-size: 16px;
+    height: 32px;
+    padding: 2.4px 0;
+    vertical-align: -3px;
+    width: 32px;
+}
+.ant-btn-primary {
+    background: #1890ff;
+    border-color: #1890ff;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 5%);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgb(0 0 0 / 12%);
+}
+.ant-btn, .ant-btn:active, .ant-btn:focus {
+    outline: 0;
+}
+.ant-btn {
+    background-image: none;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+    color: rgba(0,0,0,.85);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    height: 32px;
+    line-height: 1.5715;
+    padding: 4px 15px;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    transition: all .3s cubic-bezier(.645,.045,.355,1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+}
+.ant-btn-icon-only {
+    vertical-align: -3px;
+}
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+.ant-btn .anticon {
+    transition: margin-left .3s cubic-bezier(.645,.045,.355,1);
+}
+.ant-btn-icon-only>.anticon {
+    display: flex;
+    justify-content: center;
+}
+.ant-btn>.anticon {
+    line-height: 1;
+}
+.ant-btn>span {
+    display: inline-block;
+}
+.ant-btn span {
+    align-items: center;
+    display: inline-flex;
+}
+.ant-btn-icon-only>* {
+    font-size: 16px;
+}
+a {
+    -webkit-text-decoration-skip: objects;
+    background-color: initial;
+    color: #1890ff;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    transition: color .3s;
+}
+.ant-avatar.ant-avatar-icon {
+    font-size: 18px;
+}
+.ant-avatar {
+    font-feature-settings: "tnum","tnum";
+    background: #ccc;
+    border-radius: 50%;
+    box-sizing: border-box;
+    color: rgba(0,0,0,.85);
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-variant: tabular-nums;
+    height: 32px;
+    line-height: 1.5715;
+    line-height: 32px;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 32px;
+}
+.ant-avatar.ant-avatar-icon>.anticon {
+    margin: 0;
+}
+.ant-dropdown-button>.anticon.anticon-down, .ant-dropdown-link>.anticon.anticon-down, .ant-dropdown-trigger>.anticon.anticon-down {
+    font-size: 10px;
+    vertical-align: initial;
+}
+a {
+    -webkit-text-decoration-skip: objects;
+    background-color: initial;
+    color: #1890ff;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    transition: color .3s;
+}
+.ant-layout-content {
+    flex: auto;
+    min-height: 0;
+}
+.ant-typography h1, div.ant-typography-h1, div.ant-typography-h1>textarea, h1.ant-typography {
+    color: rgba(0,0,0,.85);
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.23;
+    margin-bottom: 0.5em;
+}
+.ant-typography h1, h1.ant-typography {
+    color: rgba(0,0,0,.85);
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.23;
+    margin-bottom: 0.5em;
+}
+.ant-typography {
+    color: rgba(0,0,0,.85);
+    overflow-wrap: break-word;
+}
+h1{
+    color: rgba(0,0,0,.85);
+    font-weight: 500;
+    margin-bottom: 0.5em;
+    margin-top: 0;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.logo {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 8px;
+}
+img {
+    border-style: none;
+    vertical-align: middle;
+}
+.ant-table-ping-right:not(.ant-table-has-fix-right) .ant-table-container {
+    position: relative;
+}
+.ant-table.ant-table-bordered>.ant-table-container {
+    border-left: 1px solid #f0f0f0;
+}
+.ant-table-ping-right:not(.ant-table-has-fix-right)>.ant-table-container {
+    position: relative;
+}
+.ant-table-container, .ant-table-container table>thead>tr:first-child th:first-child {
+    border-top-left-radius: 2px;
+}
+.ant-table-container {
+    border-top-right-radius: 2px;
+}
+.ant-table-wrapper {
+    clear: both;
+    max-width: 100%;
+}
+.ant-space-vertical {
+    flex-direction: column;
+}
+.ant-space {
+    display: inline-flex;
+}
+.ant-spin-nested-loading {
+    position: relative;
+}
+.ant-spin-container {
+    position: relative;
+    transition: opacity .3s;
+}
+.ant-table.ant-table-bordered>.ant-table-container {
+    border-left: 1px solid #f0f0f0;
+}
+.ant-table {
+    font-feature-settings: "tnum","tnum";
+    background: #fff;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: rgba(0,0,0,.85);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5715;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-content>table, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-header>table {
+    border-top: 1px solid #f0f0f0;
+}
+.ant-table table {
+    border-collapse: initial;
+    border-radius: 2px 2px 0 0;
+    border-spacing: 0;
+    text-align: left;
+    width: 100%;
+}
+table {
+    border-collapse: collapse;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}
+colgroup {
+    display: table-column-group;
+}
+col {
+    display: table-column;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-body>table>thead>tr:not(:last-child)>th, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-content>table>thead>tr:not(:last-child)>th, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-header>table>thead>tr:not(:last-child)>th, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-summary>table>thead>tr:not(:last-child)>th {
+    border-bottom: 1px solid #f0f0f0;
+}
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-body>table>tbody>tr>td,
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-body>table>tfoot>tr>td, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-body>table>tfoot>tr>th, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-body>table>thead>tr>th, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-content>table>tbody>tr>td, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-content>table>tfoot>tr>td, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-content>table>tfoot>tr>th, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-content>table>thead>tr>th, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-header>table>tbody>tr>td, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-header>table>tfoot>tr>td, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-header>table>tfoot>tr>th, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-header>table>thead>tr>th, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-summary>table>tbody>tr>td, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-summary>table>tfoot>tr>td, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-summary>table>tfoot>tr>th, 
+.ant-table.ant-table-bordered>.ant-table-container>.ant-table-summary>table>thead>tr>th {
+    border-right: 1px solid #f0f0f0;
+}
+.ant-table-thead>tr>th {
+    background: #fafafa;
+    border-bottom: 1px solid #f0f0f0;
+    color: rgba(0,0,0,.85);
+    font-weight: 500;
+    position: relative;
+    text-align: left;
+    transition: background .3s ease;
+}
+.ant-table tfoot>tr>td, .ant-table tfoot>tr>th, .ant-table-tbody>tr>td, .ant-table-thead>tr>th {
+    overflow-wrap: break-word;
+    padding: 16px;
+    position: relative;
+}
+th {
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.ant-spin-container:after {
+    background: #fff;
+    bottom: 0;
+    content: "";
+    display: none\9;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .3s;
+    width: 100%;
+    z-index: 10;
+}
